@@ -1,0 +1,45 @@
+---
+region: us-east-1
+aws_region: us-east-1
+size: 100
+rds_db_size: db.m3.medium
+instance_type: db.m3.medium
+rds_instance_size: db.m3.medium
+#rds_instance_size: 100
+db_engine: postgres    
+rds_db_engine: postgres    
+# Optional: Postgres DB engine rev
+engine_version: 9.3.3
+# Optional: RDS Parameter Group
+parameter_group: dbpg1
+# Required: RDS Subnet Group for multi-zone
+subnet: ansible-sg1
+# Required: Database security group ID
+security_groups: sg-xxxxx
+iops: 1000
+# Window in format of ddd:hh24:mi-ddd:hh24:mi, eg: Mon:01:00-Mon:01:15 (minimum 30 mins)
+maint_window: "Sun:01:00-Sun:01:30"
+# Window in format of hh24:mi-ddd:hh24:mi, eg: 01:15-01:45 (minimum 30 mins)
+backup_window: "02:00-02:30"
+# Days to save backup snapshots
+backup_retention: 14
+# Do not set zone for Multi-AZ launches
+zone: 
+#
+rds_instance_name: test-rds-pg
+rds_db_user_name: test-rds-pg
+db_name: myrdspg
+username: dbadmin
+password: password
+rds_db_password: password
+#
+# For VPC ec2 instance
+#vpc_subnet:vpc-10574478
+#vpc_subnet_id: subnet-xxxxx
+#group_id: sg-xxxxxx
+sg_group: sg-xxxxxx
+keypair_name: myKeyPem
+root_volume_size_gbs: 30 
+aws_access_key: "AKIAWFBOSWAWIS2DGTFB"
+aws_secret_key: "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"
+vpc_subnet: subnet-cf4332b5

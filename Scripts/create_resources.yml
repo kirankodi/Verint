@@ -1,0 +1,12 @@
+---
+- hosts: localhost
+  tasks:
+    - debug:
+        msg: play1
+
+    - name: Include a play after another play
+      import_playbook: AWS/create-s3-bucket.yml
+      import_playbook: AWS/create-sg-db.yml
+      import_playbook: AWS/create-vpc.yml
+      import_playbook: AWS/launch-rds.yml
+

@@ -1,0 +1,10 @@
+    
+#
+#About: This will create s3 bucket
+#
+---
+- hosts: localhost
+  connection: local
+  gather_facts: True
+  roles:
+  - create-s3-bucket
