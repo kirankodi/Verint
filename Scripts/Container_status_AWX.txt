@@ -1,0 +1,6 @@
+CONTAINER ID        IMAGE                        COMMAND                  CREATED             STATUS              PORTS                                                 NAMES
+193ceaed79a4        ansible/awx_task:5.0.0       "/tini -- /bin/sh -c…"   30 minutes ago      Up 29 minutes       8052/tcp                                              awx_task
+67ffbd9898a7        ansible/awx_web:5.0.0        "/tini -- /bin/sh -c…"   30 minutes ago      Up 29 minutes       0.0.0.0:80->8052/tcp                                  awx_web
+106c4e68116d        ansible/awx_rabbitmq:3.7.4   "docker-entrypoint.s…"   30 minutes ago      Up 29 minutes       4369/tcp, 5671-5672/tcp, 15671-15672/tcp, 25672/tcp   awx_rabbitmq
+4909638e2cdf        postgres:9.6                 "docker-entrypoint.s…"   30 minutes ago      Up 29 minutes       5432/tcp                                              awx_postgres
+00b45b0c60e5        memcached:alpine             "docker-entrypoint.s…"   30 minutes ago      Up 29 minutes       11211/tcp                                             awx_memcached
